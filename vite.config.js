@@ -13,11 +13,14 @@ export default defineConfig({
     }),
   ],
   
+  // 设置base路径，确保静态资源能正确加载
+  base: './',
+  
   server: {
     port: 3018,
     host: '0.0.0.0',
     allowedHosts: [
-      'resume.x.ddnsto.com',
+      'frp5.ccszxc.site',
       'localhost', 
       'all'
     ],
