@@ -26,8 +26,9 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # 复制配置文件到Nginx配置目录
 COPY config /usr/share/nginx/html/config
 
-# 暴露端口
-EXPOSE 3018
+
+# 暴露端口,Nginx默认监听80端口
+EXPOSE 80
 
 # 启动Nginx
 CMD ["nginx", "-g", "daemon off;"]
