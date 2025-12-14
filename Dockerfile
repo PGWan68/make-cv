@@ -35,5 +35,12 @@ RUN chmod -R 755 /app && chown -R nginx:nginx /app
 # 暴露Nginx默认端口
 EXPOSE 3018
 
-# 启动Nginx（使用默认配置）
-CMD ["nginx", "-g", "daemon off;"]
+# 创建启动脚本确保配置文件权限正确
+RUN echo '#!/bin/sh' > /start.sh && \
+    echo 'chown -R nginx:nginx /app/config' >> /start.sh && \
+    echo 'chmod -R 755 /app/config' >> /start.sh && \
+    echo 'nginx -g "daemon off;"' >> /start.sh && \
+    chmod +x /start.sh
+
+# 使用启动脚本启动Nginx
+CMD ["/start.sh"]
