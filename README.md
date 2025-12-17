@@ -188,10 +188,10 @@ docker run -d -p 8080:3018 -v $(pwd)/config:/app/config wan-resume
 本项目已推送至 Dockerhub，也可以直接拉取使用：
 ```bash
 # 拉取镜像
-docker pull pinger68/wan-resume:latest
+docker pull ethanwwan/wan-resume:latest
 
 # 运行容器
-docker run -d -p 3018:3018 -v $(pwd)/config:/app/config pinger68/wan-resume:latest
+docker run -d -p 3018:3018 -v $(pwd)/config:/app/config ethanwwan/wan-resume:latest
 ```
 
 #### 4. 访问简历
